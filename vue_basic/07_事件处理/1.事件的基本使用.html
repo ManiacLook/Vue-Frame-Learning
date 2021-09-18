@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+        <div id="root">
+            <h2>欢迎来到{{ name }}</h2>
+            <!-- <button v-on:click="showInfo">点我提示信息</button> -->
+            <button @click="showInfo1">点我提示信息1</button>
+            <button @click="showInfo2($event, 66)">点我提示信息2</button>
+        </div>
+    </body>
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        const vm = new Vue({
+            el:'#root',
+            data:{
+                name:'武汉'
+            },
+            methods:{
+                showInfo1(event){
+                    console.log(event.target.innerText) // 输出目标文本
+                    console.log(this) // 此处的this是vm
+                },
+                showInfo2(event, number){
+                    console.log(number)
+                    console.log(event)
+                }
+            }
+        })
+    </script>
+</html>
