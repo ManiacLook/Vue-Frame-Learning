@@ -15,12 +15,14 @@
                 opacity:1
             }
         },
+        // 组件激活时调用
         activated(){
             this.timer = setInterval(()=>{
                 this.opacity -= 0.01
                 if (this.opacity <= 0)  this.opacity = 1
             }, 16)
         },
+        // 组件取消激活时调用
         deactivated(){
             clearInterval(this.timer)
         },
