@@ -4,5 +4,5 @@
 time=$(date "+%Y-%m-%d %H:%M:%S")
 git add .
 git commit -m "auto push in $time"
-git push
+git push -u origin master
 
